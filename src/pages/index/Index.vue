@@ -1,20 +1,22 @@
 <template>
-  <q-page class="flex flex-center">
-    <btn-de-muestra class="q-mr-sm" />
-    <!-- xs, sm, md, lg-->
-    <btn-de-muestra class="q-mr-sm" />
-    <btn-de-muestra class="q-mr-sm" />
-    <btn-de-muestra class="q-mr-sm" />
-    <btn-de-muestra />
+  <q-page class="flex justify-evenly items-center">
+    <e-card title="Titulo 1" />
+    <e-card :title="tituloSegundo" />
+    <e-card title="Titulo 3" />
   </q-page>
 </template>
 
 <script>
-import BtnDeMuestra from "src/components/Btn";
+import ECard from "src/components/ECard.vue";
 export default {
   name: "PageIndex",
   components: {
-    BtnDeMuestra
+    ECard
+  },
+  data() {
+    return {
+      tituloSegundo: "Titulo 2021"
+    };
   }
 };
 </script>

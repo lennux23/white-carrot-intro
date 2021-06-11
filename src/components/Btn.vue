@@ -17,4 +17,9 @@ export default {
   background: purple;
   color: white;
 }
+.e-title {
+  width: 30vw;
+  height: 40vh;
+  border: 1px blue solid;
+}
 </style>
