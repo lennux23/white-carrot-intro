@@ -14,7 +14,7 @@
         :title="card.title"
         :description="card.description"
         :note="card.note"
-        @closeCard="manejaEvento"
+        @closeCard="deleteCard(index)"
       />
     </div>
   </q-page>
@@ -59,8 +59,13 @@ export default {
     };
   },
   methods: {
-    manejaEvento() {
-      console.log("llego el clic al padre");
+    deleteCard(indexToDelete) {
+      let cardsFiltered = this.cards.filter((el, ind) => {
+        if (ind != indexToDelete) {
+          return el;
+        }
+      });
+      this.cards = cardsFiltered;
     }
   }
 };
