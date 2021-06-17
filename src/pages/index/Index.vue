@@ -14,8 +14,24 @@
         :title="card.title"
         :description="card.description"
         :note="card.note"
-        @closeCard="deleteCard(index)"
-      />
+      >
+        <template v-slot:icon-close>
+          <q-icon name="close" size="lg" @click="deleteCard(index)"
+        /></template>
+      </e-card>
+    </div>
+    <e-card
+      title="Titulo Estatico"
+      description="Desc estático"
+      note="Nota Estatica"
+    >
+      <template v-slot:content>
+        <img src="https://cdn.quasar.dev/img/parallax2.jpg" alt="" />
+        <h3>Hola</h3>
+      </template>
+    </e-card>
+    <div class="flex flex-center">
+      <e-btn label="Que onda" @click="metodoQueOnda" color="primary" />
     </div>
   </q-page>
 </template>
@@ -66,6 +82,9 @@ export default {
         }
       });
       this.cards = cardsFiltered;
+    },
+    metodoQueOnda() {
+      alert("que onda");
     }
   }
 };
